@@ -1,22 +1,27 @@
 import { Link } from "react-router-dom";
-import ValueDeals from "../components/Sections/ValueDeals";
+import Section from "../components/Sections/Section";
+import { IoMenu } from "react-icons/io5";
 
 const Home = () => {
   return (
     <div>
-      <div className="flex justify-between items-center">
-        <div>
+      {/* navigation bar */}
+      <div className="flex justify-between items-center px-2">
+        <div className="flex items-center">
+          <label
+            htmlFor="my-drawer"
+            className=" rounded-full mt-6 btn-sm drawer-button lg:hidden"
+          >
+            <IoMenu className="text-xl" />
+          </label>
           <img
-            className="w-60"
+            className=" w-32 mb-3 ml-2 lg:w-60"
             src="https://goodshelf.app/assets/images/logo.png"
             alt=""
           />
         </div>
-        <div>
-          {/* <label htmlFor="my-drawer" className="btn btn-primary drawer-button">
-            Open drawer
-          </label> */}
-          <ul className="flex gap-6">
+        <div className="mt-4">
+          <ul className=" gap-6 hidden  lg:flex lg:items-center">
             <Link>Refer & Save </Link>
             <Link>Wallet </Link>
             <Link>Sign In </Link>
@@ -29,8 +34,11 @@ const Home = () => {
 
       <hr />
 
-      <div className="mt-20">
-        <ValueDeals></ValueDeals>
+      {/* Product Sectons */}
+      <div className="mt-10 space-y-6 ">
+        <Section title={"Value Deals"}></Section>
+        <Section title={"Kid Friendly"}></Section>
+        <Section title={"Millet Alternatives"}></Section>
       </div>
     </div>
   );
